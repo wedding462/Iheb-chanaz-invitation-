@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Lune gibbeuse croissante">
+  <defs>
+    <radialGradient id="lit" cx="34%" cy="28%" r="78%">
+      <stop offset="0" stop-color="#fff9e8"/>
+      <stop offset=".45" stop-color="#eadfbd"/>
+      <stop offset=".78" stop-color="#c8c4b4"/>
+      <stop offset="1" stop-color="#9ca4b2"/>
+    </radialGradient>
+    <radialGradient id="shadow" cx="70%" cy="50%" r="75%">
+      <stop offset="0" stop-color="#28314c"/>
+      <stop offset="1" stop-color="#11172d"/>
+    </radialGradient>
+    <clipPath id="disc"><circle cx="100" cy="100" r="72"/></clipPath>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <circle cx="100" cy="100" r="83" fill="#e8ddb8" opacity=".13" filter="url(#glow)"/>
+  <circle cx="100" cy="100" r="72" fill="url(#lit)"/>
+  <g clip-path="url(#disc)" opacity=".25" fill="#7c8490">
+    <circle cx="73" cy="66" r="13"/><circle cx="119" cy="54" r="7"/>
+    <circle cx="130" cy="105" r="15"/><circle cx="79" cy="126" r="10"/>
+    <circle cx="105" cy="145" r="6"/><circle cx="55" cy="98" r="5"/>
+  </g>
+  <path d="M42 42 C12 67 13 127 46 151 C30 124 29 76 42 42Z" fill="url(#shadow)" opacity=".98"/>
+  <path d="M42 42 C12 67 13 127 46 151" fill="none" stroke="#f4eedf" stroke-opacity=".22" stroke-width="1.5"/>
+  <path d="M157 34l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#e6cf9b"/>
+  <circle cx="36" cy="42" r="2" fill="#e6cf9b"/>
+</svg>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b20">
+  <meta name="description" content="Iheb Gargouri & Chanaz Sanaa — Invitation de mariage, 18 décembre 2026, Dar Bouraoui, Carthage.">
+  <title>Iheb & Chanaz — Invitation de mariage</title>
+  <link rel="icon" href="assets/moon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main>
+    <section class="moon-screen" id="welcome" aria-label="Welcome">
+      <div class="sky-glow"></div>
+      <p class="eyebrow welcome-label">Un petit instant de magie vous attend</p>
+      <button class="moon-button" id="moonButton" aria-label="Touchez la lune to open the wedding invitation">
+        <span class="moon-halo"></span>
+        <span class="moon">
+          <span class="moon-crater crater-one"></span>
+          <span class="moon-crater crater-two"></span>
+          <span class="moon-crater crater-three"></span>
+        </span>
+        <span class="moon-prompt">Touchez la lune</span>
+      </button>
+      <p class="tap-hint">✦ Touchez pour commencer ✦</p>
+      <div class="scroll-cue" aria-hidden="true">↓</div>
+    </section>
+
+    <section class="hero section-hidden" id="invitation">
+      <div class="ornament top-ornament" aria-hidden="true">✦　☾　✦</div>
+      <p class="eyebrow reveal">NOUS NOUS MARIONS</p>
+      <h1 class="couple reveal"><span>Iheb</span><i>&amp;</i><span>Chanaz</span></h1>
+      <p class="full-names reveal">Iheb Gargouri <span>·</span> Chanaz Sanaa</p>
+      <div class="divider reveal"><span></span><b>✧</b><span></span></div>
+      <p class="poem reveal">Sous la lumière de la lune,<br>nous célébrerons notre amour.</p>
+      <p class="invite-line reveal">Venez célébrer ce bonheur avec nous.</p>
+      <button class="continue-button reveal" id="discoverButton" aria-label="Découvrir les détails du mariage">Découvrir la soirée <span>↓</span></button>
+    </section>
+
+    <section class="event-section" id="details">
+      <div class="event-card reveal">
+        <div class="event-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" role="presentation">
+            <circle cx="60" cy="60" r="43" fill="none" stroke="currentColor" stroke-opacity=".25"/>
+            <path d="M70 20a38 38 0 1 0 31 57A34 34 0 0 1 70 20Z" fill="currentColor"/>
+            <circle cx="34" cy="37" r="1.8" fill="currentColor"/><circle cx="88" cy="30" r="1.5" fill="currentColor"/>
+            <path d="M25 76l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5zM91 88l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z" fill="currentColor"/>
+          </svg>
+        </div>
+        <p class="eyebrow reveal">UNE SOIRÉE INOUBLIABLE</p>
+        <h2 class="reveal">Notre mariage</h2>
+        <p class="event-description reveal">Une soirée d’amour, de joie et le début d’une belle éternité.</p>
+        <div class="details-grid reveal">
+          <div class="detail">
+            <span class="detail-label">DATE</span>
+            <strong>Vendredi</strong>
+            <span>18 décembre 2026</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">HEURE</span>
+            <strong>20:00</strong>
+            <span>Vingt heures</span>
+          </div>
+          <div class="detail place-detail">
+            <span class="detail-label">LIEU</span>
+            <strong>Dar Bouraoui</strong>
+            <span>Carthage, Tunisie</span>
+          </div>
+        </div>
+        <a class="map-button reveal" href="https://www.google.com/maps/search/?api=1&query=Dar+Bouraoui+Carthage+Tunisia" target="_blank" rel="noopener noreferrer">Voir le lieu <span>↗</span></a>
+      </div>
+      <p class="closing reveal">Avec joie et amour,<br><em>nous vous attendons.</em></p>
+      <p class="signature reveal">Iheb <span>&amp;</span> Chanaz</p>
+      <p class="date-stamp reveal">18 · 12 · 2026</p>
+      <button class="back-to-moon" id="replayButton">↟ &nbsp; Revenir à la lune</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

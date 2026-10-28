@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500&display=swap');
+:root{--night:#080b20;--night2:#101630;--cream:#f4eedf;--gold:#e6cf9b;--muted:#b9bbcb;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--night)}
+body{margin:0;background:radial-gradient(ellipse at 50% 25%,#202746 0%,var(--night) 55%,#050714 100%);color:var(--cream);font-family:var(--sans);font-weight:300;overflow-x:hidden}
+button,a{-webkit-tap-highlight-color:transparent}
+.stars,.grain{position:fixed;inset:0;pointer-events:none;z-index:0}
+.stars{opacity:.55;background-image:radial-gradient(1px 1px at 7% 16%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 24% 70%,#e6cf9b 50%,transparent 100%),radial-gradient(1px 1px at 43% 21%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 76% 18%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 88% 55%,#e6cf9b 50%,transparent 100%),radial-gradient(1px 1px at 63% 82%,#fff 50%,transparent 100%),radial-gradient(1.5px 1.5px at 16% 47%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 95% 87%,#fff 50%,transparent 100%);background-size:390px 390px;animation:star-drift 50s linear infinite}
+.grain{opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+main{position:relative;z-index:1}
+.moon-screen{min-height:100svh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 22px;overflow:hidden}
+.sky-glow{position:absolute;width:min(90vw,700px);height:min(90vw,700px);border-radius:50%;background:radial-gradient(circle,rgba(125,143,199,.12),rgba(52,66,113,.05) 45%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.eyebrow{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);line-height:1.8}
+.welcome-label{position:absolute;top:12%;margin:0;animation:fade-up 1.4s both}
+.moon-button{border:0;background:transparent;color:var(--gold);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:30px;padding:20px;position:relative;z-index:2}
+.moon-halo{position:absolute;width:270px;height:270px;border:1px solid rgba(230,207,155,.12);border-radius:50%;top:-28px;left:50%;transform:translateX(-50%);animation:halo 5s ease-in-out infinite}
+.moon{width:155px;height:155px;border-radius:50%;display:block;position:relative;overflow:hidden;background:radial-gradient(circle at 34% 28%,#fff8d9 0,#e8d9b5 28%,#b7b39f 65%,#7e8795 100%);box-shadow:0 0 30px rgba(236,222,183,.22),0 0 95px rgba(208,211,227,.25),inset -16px -12px 28px rgba(29,37,61,.24);transition:transform 1s cubic-bezier(.2,.8,.2,1),box-shadow 1s}
+.moon:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.18) 46%,transparent 70%);border-radius:50%}
+.moon-crater{position:absolute;display:block;border-radius:50%;background:rgba(119,126,128,.16);box-shadow:inset 2px 2px 5px rgba(58,63,73,.12),0 0 2px rgba(255,255,255,.1)}
+.crater-one{width:29px;height:29px;top:31px;left:29px}.crater-two{width:18px;height:18px;top:82px;left:81px}.crater-three{width:12px;height:12px;top:49px;left:102px}
+.moon-prompt{font-family:var(--serif);font-size:24px;font-style:italic;letter-spacing:.04em;color:var(--cream);animation:soft-pulse 2.4s ease-in-out infinite}
+.tap-hint{position:absolute;bottom:13%;font-size:9px;letter-spacing:.3em;color:#aeb5d2;text-transform:uppercase;animation:fade-up 1.8s both}
+.scroll-cue{position:absolute;bottom:4%;color:var(--gold);font-size:20px;opacity:.6;animation:bob 1.7s infinite}
+.moon-button:hover .moon,.moon-button:focus-visible .moon{transform:scale(1.06);box-shadow:0 0 45px rgba(236,222,183,.35),0 0 130px rgba(208,211,227,.36)}
+.moon-button:focus-visible{outline:1px solid var(--gold);outline-offset:8px;border-radius:50%}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:95px 24px 75px;position:relative}
+.section-hidden{display:none}
+.ornament{color:var(--gold);letter-spacing:.3em;font-size:19px;margin-bottom:25px}
+.couple{font-family:var(--serif);font-weight:300;font-size:clamp(68px,12vw,118px);line-height:.82;letter-spacing:-.045em;margin:27px 0 20px;display:flex;flex-direction:column;align-items:center}
+.couple i{font-size:.55em;font-weight:300;color:var(--gold);line-height:1.2;margin:9px 0}
+.full-names{font-family:var(--serif);font-size:15px;letter-spacing:.1em;color:#d4d5df;margin:14px 0 0}.full-names span{color:var(--gold);padding:0 8px}
+.divider{display:flex;align-items:center;gap:14px;margin:29px 0 23px;color:var(--gold)}.divider span{width:58px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.divider span:last-child{transform:rotate(180deg)}.divider b{font-weight:400}
+.poem{font-family:var(--serif);font-size:clamp(25px,5vw,36px);line-height:1.25;font-weight:300;margin:0 0 13px}
+.invite-line{font-size:11px;letter-spacing:.08em;color:#c1c4d4;margin:0}
+.continue-button,.map-button{margin-top:44px;display:inline-flex;align-items:center;gap:15px;border:1px solid rgba(230,207,155,.58);border-radius:1px;background:transparent;color:var(--cream);padding:14px 21px;text-decoration:none;font:400 9px var(--sans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s,transform .3s}
+.continue-button:hover,.map-button:hover{background:var(--gold);color:var(--night);transform:translateY(-2px)}
+.continue-button span{font-size:16px;color:var(--gold)}.continue-button:hover span{color:var(--night)}
+.event-section{min-height:100svh;padding:90px 20px 70px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(180deg,transparent,rgba(18,25,53,.55) 18%,rgba(18,25,53,.55) 82%,transparent)}
+.event-card{width:min(100%,620px);padding:45px clamp(20px,6vw,60px) 50px;border:1px solid rgba(230,207,155,.36);background:linear-gradient(145deg,rgba(19,27,57,.76),rgba(10,14,35,.75));box-shadow:0 25px 90px rgba(0,0,0,.16);position:relative}
+.event-card:before,.event-card:after{content:"✧";position:absolute;color:rgba(230,207,155,.55);font-size:17px}.event-card:before{top:12px;left:14px}.event-card:after{right:14px;bottom:12px}
+.event-icon{width:75px;height:75px;margin:0 auto 22px;color:var(--gold)}.event-icon svg{width:100%;height:100%}
+h2{font-family:var(--serif);font-size:clamp(42px,8vw,65px);font-weight:300;margin:7px 0 9px}
+.event-description{font-family:var(--serif);font-style:italic;font-size:21px;color:#c7c9d7;margin:0 auto;max-width:340px;line-height:1.35}
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:27px 18px;margin:42px auto 0;max-width:450px}
+.detail{display:flex;flex-direction:column;align-items:center;gap:7px}.place-detail{grid-column:1/-1}
+.detail-label{font-size:9px;letter-spacing:.3em;color:var(--gold);margin-bottom:4px}
+.detail strong{font-family:var(--serif);font-size:25px;font-weight:400}.detail span:last-child{font-size:11px;color:#c1c4d4;letter-spacing:.03em}
+.map-button{margin-top:37px}
+.closing{font-family:var(--serif);font-size:25px;line-height:1.35;margin:44px 0 15px;color:#d8d8e2}.closing em{color:var(--gold);font-weight:300}
+.signature{font-family:var(--serif);font-size:39px;margin:0;color:var(--cream)}.signature span{color:var(--gold);font-style:italic}.date-stamp{font-size:9px;letter-spacing:.35em;color:var(--gold);margin:13px 0 30px}
+.back-to-moon{background:none;border:0;color:#aeb5d2;font:10px var(--sans);letter-spacing:.15em;text-transform:uppercase;cursor:pointer;padding:12px;opacity:.8}.back-to-moon:hover{color:var(--gold)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes halo{0%,100%{transform:translateX(-50%) scale(.95);opacity:.55}50%{transform:translateX(-50%) scale(1.07);opacity:1}}
+@keyframes soft-pulse{0%,100%{opacity:.68;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@keyframes star-drift{from{background-position:0 0}to{background-position:390px 390px}}
+body.opened .moon-screen{animation:moon-away 1.3s ease forwards}
+@keyframes moon-away{to{opacity:0;transform:translateY(-35px);visibility:hidden}}
+@media(min-width:700px){.moon{width:185px;height:185px}.moon-halo{width:320px;height:320px;top:-38px}.moon-screen{min-height:100vh}.hero{min-height:100vh}.event-section{padding-top:110px;padding-bottom:90px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* Waxing gibbous phase: mostly illuminated disk, shadowed sliver on the left */
+.moon{isolation:isolate}
+.moon:before{content:"";position:absolute;z-index:1;inset:0;border-radius:50%;
+  background:linear-gradient(90deg,rgba(16,23,45,.97) 0%,rgba(16,23,45,.88) 9%,rgba(16,23,45,.48) 17%,rgba(16,23,45,0) 31%);
+  clip-path:ellipse(100% 100% at 100% 50%);pointer-events:none}
+.moon-crater{z-index:2}
+.moon:after{z-index:3}
